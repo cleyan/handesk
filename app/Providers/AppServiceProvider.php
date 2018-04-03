@@ -29,6 +29,12 @@ class AppServiceProvider extends ServiceProvider
         Validator::replacer('old_password', function ($message, $attribute, $rule, $parameters) {
             return __('passwords.change_error');
         });
+    
+        If (env('APP_ENV') !== 'local') {
+            $this->app['request']->server->set('HTTPS', true);
+        }
+    
+        Schema::defaultStringLength(191);
     }
 
     /**
