@@ -54,7 +54,7 @@ return [
             'engine'      => null,
         ],
 
-        'pgsql' => [
+        'helpdesk' => [
             'driver'   => 'pgsql',
             'host'     => env('DB_HOST', '127.0.0.1'),
             'port'     => env('DB_PORT', '5432'),
@@ -63,7 +63,7 @@ return [
             'password' => env('DB_PASSWORD', ''),
             'charset'  => 'utf8',
             'prefix'   => '',
-            'schema'   => 'public',
+            'schema'   => 'public_helpdesk',
             'sslmode'  => 'prefer',
         ],
 

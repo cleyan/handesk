@@ -17,8 +17,8 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(UsersTableSeeder::class);
         factory(User::class)->create([
-            'email'    => 'admin@handesk.com',
-            'password' => bcrypt('admin'),
+            'email'    => 'carlosleyan@lirmi.com',
+            'password' => bcrypt('c4rlitos'),
             'admin'    => true,
         ]);
 
