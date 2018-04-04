@@ -10,8 +10,8 @@
     <div class="comment description actions">
         <table class="maxw600 no-padding">
             <tr><td class="w20"><b> {{ __('ticket.requester') }}:</b></td></tr>
-            <tr><td>{{ __('user.name')  }}: </td><td class="w100"><input type="name"  name="requester[name]"  class="w100" required></td></tr>
-            <tr><td>{{ __('user.email') }}: </td><td class="w100"><input type="email" name="requester[email]" class="w100" required></td></tr>
+            <tr><td>{{ __('user.name')  }}: </td><td class="w100"><input type="name"  name="requester[name]"  class="w100" required value="{{ Auth::user()->name }}" readonly></td></tr>
+            <tr><td>{{ __('user.email') }}: </td><td class="w100"><input type="email" name="requester[email]" class="w100" required value="{{ Auth::user()->email }}" readonly></td></tr>
         </table>
     </div>
 
@@ -27,7 +27,13 @@
                     App\Ticket::STATUS_OPEN     => __("ticket.open"),
                     App\Ticket::STATUS_PENDING  => __("ticket.pending"),
                 ]) }}
-                <button class="uppercase ph3 ml1"> @icon(comment) {{ __('ticket.new') }}</button> </td>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button class="uppercase ph3 ml1"> @icon(comment) {{ __('ticket.new') }}</button>
+                    <a href="{{ route('tickets.index') }}" class="btn btn-default">Cancelar</a>
+                </td>
             </tr>
         </table>
         {{ Form::close() }}
